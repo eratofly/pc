@@ -10,7 +10,7 @@ public:
 
     bool SendMoneySomebody(CharacterWithBankAccount& character, Money amount)
     {
-        std::scoped_lock lock(m_mutex, character.m_mutex);        return m_bank.TrySendMoney(character.GetAccountId(), m_accountId, amount);
+        return m_bank.TrySendMoney(character.GetAccountId(), m_accountId, amount);
     }
 
     bool WithDrawMoneyByCharacter(Money amount)
